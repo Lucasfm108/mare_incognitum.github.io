@@ -1,0 +1,68 @@
+.slide-background:first-child {
+  background-color:#001f3f;
+}
+
+
+.slide-background:not(:first-child) {
+  background-color:#FFF8DC;
+}
+
+
+.reveal h1.title {
+  color: #FFEFD5;
+  text-align: center;
+  line-height: 500px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.reveal h1.subtitle {
+  color: #FFEFD5;
+  text-align: center;
+  line-height: 400px;
+  font-size: 45px
+}
+
+.reveal h2.author {
+  color: #FFEFD5;
+  text-align: right;
+  line-height: 300px;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.reveal h1 {
+  color: #FFF5EE;
+  text-align: center;
+  height: 90px;
+  line-height: 800px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.reveal h2 {
+  color: #000080;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+.reveal section p {
+  color: #1a1a1a;
+   letter-spacing: 0px;
+   line-height: 1.5;
+   text-align: justify;
+   font-family: "Times New Roman", Times, serif;
+   font-size:30px;
+    
+}
+
+.reveal section ul {
+  color: #1a1a1a;
+   letter-spacing: 0px;
+   line-height: 1.5;
+   text-align: justify;
+   font-family: "Times New Roman", Times, serif;
+   font-size:30px; 
+}
+
+.code {
+background-color: #FAFAD2;
+}
