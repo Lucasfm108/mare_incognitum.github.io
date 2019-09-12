@@ -173,13 +173,13 @@ $$ e(s,J_3^0,J_3^2) =
 
 ## Equilíbrios
 
-Os equilíbrios do jogo serão diferentes a depender do tipo de vacância (para simplifcar, vamos supor que $p<j_2^1$):
+Os equilíbrios do jogo serão diferentes a depender do tipo de vacância (para simplificar, vamos supor que $p<j_2^1$):
 
 <div style="float: left; width: 40%;">
 
 **Vacâncias Proximais**:
 
-Quando a vacância for proximal, o Presidente poderá escolher à vontade o seu nomeado, uma vez que o novo mediano será igual ao antigo. Logo, em nenhuma hipótese o Senado irá rejeitar sua escolha, isto é, $n=p$.
+Quando a vacância for proximal, o Presidente poderá escolher à vontade o seu nomeado, uma vez que o novo mediano será smpre igual ao antigo. Logo, em nenhuma hipótese o Senado irá rejeitar sua escolha, de modo que $n=p$.
 
 </div>
 
@@ -187,14 +187,14 @@ Quando a vacância for proximal, o Presidente poderá escolher à vontade o seu 
 
 **Vacâncias Distais**:
 
-Quando a vacância for distal, o ponto ideal do nomeado será uma função da localização do Presidente, do Senado, do antigo mediano e do novo:
+Quando a vacância for distal, o ponto ideal do nomeado será uma função da localização do Presidente, do Senado, do antigo mediano e de $j_2^1$:
 
 <p style="border:3px; border-style:dashed; border-color:#3D9970; padding: 1em;font-size:25px;">
 $$ n(p,s,q,j_2^1) =
   \begin{cases}
     q  & se \quad s \geq q\\
-    I_s  & se \quad s\in(\frac{(q+j_2^1)}{2}, q)\\
-    p  & se \quad s \leq \frac{(q+j_2^1)}{2}\\
+    I_s  & se \quad s\in(\frac{(j_2^1+q)}{2}, q)\\
+    p  & se \quad s \leq \frac{(j_2^1+q)}{2}\\
   \end{cases} $$
 </p>
 
@@ -211,7 +211,7 @@ $$ n(p,s,q,j_2^1) =
 
 ## Modelos
 
-As conclusões da MTM podem ser testadas de diversas formas. Nos deteremos sobre duas delas.
+As conclusões da MTM podem ser testadas de diversas formas. 
 
 Em primeiro lugar, podemos testar se, de fato, a localização dos nomeados está de acordo com os equilíbrios encontrados.
 
@@ -262,9 +262,12 @@ As variáveis de interesse da MTM podem ser medidas de diversas formas:
 
 <p style="margin-left: 2em; text-indent: -3em "> KREHBIEL, KEITH. *Supreme Court Appointments as a Move-the-Median Game*. American Journal of Political Science, 51, 2007. </p>
 
+<p style="margin-left: 2em; text-indent: -3em "> LAX, Jeffrey; CAMERON, Charles. *Bargaining and Opinion Assignment on the U.S. Supreme Court*. New York University Public Law and Legal Theory Working Papers, 23, 2006. </p>
 
 <p style="margin-left: 2em; text-indent: -3em "> MORASKI, Byron J.; SHIPAN, Charles R.. *The Politics of Supreme Court Nominations: A Theory of Institutional Constraints and Choices*. American Journal of Political Science 43(4):1069–95, 1999. </p>
 
 <p style="margin-left: 2em; text-indent: -3em "> MROHDE, David W.; SHEPSLE, Kenneth A.. *Advising and Consenting in the 60-Vote Senate: Strategic Appointments to the Supreme Court.* Journal of Politics 69 (3): 664–77, 2007. </p>
 
 
+
+ 
