@@ -266,7 +266,7 @@ As variáveis de interesse da MTM podem ser medidas de diversas formas:
 
 <p style="margin-left: 2em; text-indent: -3em "> MORASKI, Byron J.; SHIPAN, Charles R.. *The Politics of Supreme Court Nominations: A Theory of Institutional Constraints and Choices*. American Journal of Political Science 43(4):1069–95, 1999. </p>
 
-<p style="margin-left: 2em; text-indent: -3em "> MROHDE, David W.; SHEPSLE, Kenneth A.. *Advising and Consenting in the 60-Vote Senate: Strategic Appointments to the Supreme Court.* Journal of Politics 69 (3): 664–77, 2007. </p>
+<p style="margin-left: 2em; text-indent: -3em "> ROHDE, David W.; SHEPSLE, Kenneth A.. *Advising and Consenting in the 60-Vote Senate: Strategic Appointments to the Supreme Court.* Journal of Politics 69 (3): 664–77, 2007. </p>
 
 
 
