@@ -1,7 +1,7 @@
 ---
-title: Movendo o Mediano
-subtitle: Política de nomeações e padrão decisório das Cortes Constitucionais 
-author: Mateus Morais Araújo e Lucas Fernandes de Magalhães
+title: Audiências Públicas 
+subtitle: no STF
+author: Marjorie Corrêa Marona e Lucas Fernandes de Magalhães
 output: 
   revealjs::revealjs_presentation:
     css: styles.css
@@ -16,258 +16,306 @@ output:
       height: 100%
 ---
 
-# MTM - Movendo o mediano
+# Introdução
 
-## O que é a MTM?
-
-&nbsp;
-&nbsp;
-
-A *move-the-median*  - MTM é uma teoria formal que busca explicar o funcionamento do jogo de nomeações para agências reguladoras ou para uma Corte Constitucional - CC
+## Estrutura da apresentação
 
 &nbsp;
 &nbsp;
 
-A ideia básica da MTM é a de que os jogadores responsáveis pela nomeação realizam suas escolhas sempre com o objetivo de aproximar o Juiz Mediano o máximo possível das suas preferências políticas.
+1- As APs e o campo de *Judicial Politics* no Brasil
 
-## Atores
+2- Referenciais teóricos
+
+3- O que sabemos sobre as APs no STF: regras de funcionamento, padrão de participação e impacto sobre a decisão dos ministros
+
+4 - Do que se sabe ao que se pode saber: deliberação, participação ou estratégia?
+
+## Levantamento bibliográfico
+
+```{r, include=FALSE}
+##Carregar os pacotes###
+
+library(tidyverse)
+library(rio)
+library(lubridate)
+library(gridExtra)
+library(treemapify)
+library(kableExtra)
+library(plotly)
+library(kableExtra)
+
+######################
+##Carregar as bases###
+######################
+rm(list=ls())
+
+setwd("C:\\Users\\lucas\\Google Drive\\Pesquisas\\pos_graduacao\\Eventos\\2020\\Mare Incognitum\\")
+bd1 <- import("base\\scholar_final.xlsx")
+bd2 <- import("base\\capes_88_12.xlsx")
+bd3 <- import("base\\capes_13_18.xlsx")
+dados_ap <- import("C:\\Users\\lucas\\Google Drive\\Pesquisas\\Ojb\\Audiências Públicas - STF\\Banco de dados  - Audiência Pública\\dadosap.xlsx")
+
+#######################
+##Organizando a base###
+#######################
+
+bd1 <- bd1 %>% select(ano_publicacao,teoria) %>% mutate(`Tipo de produção`="Artigo/Capítulo de livro") %>% rename(ano=1)
+
+bd2 <- bd2 %>% select(AnoBase,teoria) %>% mutate(`Tipo de produção`="Dissertação/Tese") %>% rename(ano=1)
+
+bd3 <- bd3 %>% select(AN_BASE,teoria) %>% mutate(`Tipo de produção`="Dissertação/Tese") %>% rename(ano=1)
+
+#############
+##Graficos###
+#############
+
+d_ap <- dados_ap %>% mutate(ano=year(data_inicio)) %>% mutate(id=1) %>% 
+  group_by(ano) %>% summarise(Total=sum(id)) %>% drop_na() %>% 
+  rbind(data.frame(ano=2011,Total=0)) %>% arrange(ano) %>%  
+  mutate(Total=cumsum(Total)) 
+
+bd <- rbind(bd1,bd2,bd3) %>% count(ano,`Tipo de produção`)
+
+##P1 - producao por ano
+p1 <- ggplot(d_ap,aes(x=as.character(ano),y=as.integer(Total)))+
+  geom_line(linetype=1,size=0.5, color="black", group=1)+
+  geom_point(color="black", size=3)+
+  geom_text(aes(label=Total),
+            position = position_nudge(y=1.5))+
+  theme_minimal()+
+  labs(x="Ano",y="Total acumulado de APs por ano")
+  
+
+p2 <- ggplot(bd,aes(x=as.character(ano),y=as.integer(n)))+
+  geom_col(aes(fill=`Tipo de produção`),color="black")+
+  theme_minimal()+
+  labs(x="Ano",y="Nº de produções")+
+  scale_fill_manual(values=c("grey50","grey"),name="Total por tipo de produção")+
+  theme(legend.key = element_blank(), 
+        legend.background = element_rect(colour = 'black', fill = 'white'), 
+        legend.position = "bottom", legend.title = element_blank(),
+        legend.box.just = "left")
+  
+```
+
+```{r, fig.align='center', echo=FALSE, fig.width=12}
+grid.arrange(p1,p2)
+```
+
+
+# As APs e o campo de *Judicial Politics* no Brasil
+
+## As APs e a agenda de *Judicial Politics*
 
 &nbsp;
 &nbsp;
 
-O jogo da nomeação conta com $2 + n$ atores: 
+Acesso e Padrão de Acionamento da corte
+
+&nbsp;
+&nbsp;
+
+Comportamento e Processo Decisório
 
 
-* O primeiro deles (isto é, o Presidente) é o responsável por escolher o nomeado, também chamado de *agenda settler*;                           
+# Referenciais teóricos
+
+## Deliberação e cortes constitucionais
+
+&nbsp;
+&nbsp;
+
+Deliberação interna
+
+&nbsp;
+&nbsp;
+
+Diálogo interinstitucional
+
+&nbsp;
+&nbsp;
+
+Interface socioestatal
+
+## Comportamento Judicial
+
+&nbsp;
+&nbsp;
+
+Teorias de comportamento judicial
+
+&nbsp;
+&nbsp;
+
+Estratégia e poderes individuais dos ministros
+
+# O que sabemos sobre as APs no STF?
+
+## A regra é não ter regra?
+
+&nbsp;
+&nbsp;
+
+Regramento mínimo nas Leis e no RISTF
+
+&nbsp;
+&nbsp;
+
+Institucionalização informal de algumas práticas reiteradas
+
+&nbsp;
+&nbsp;
+
+Formato "adversarial" das apresentações
+
+&nbsp;
+&nbsp;
+
+Regra do "não-debate"
+
+## Quem é convidado pra festa?
+
+&nbsp;
+&nbsp;
+
+Participação através de 1) Convite, 2) Indicação pelas partes ou terceiros admitidos no processo ou 3) Inscrição
+
+&nbsp;
+&nbsp;
+
+Falta de transparência em relação aos critérios de envio de convites e (in)deferimento das inscrições
+
+## Quem é convidado pra festa?
+
+<center><img src="p6.PNG" width = "900px" height="600px" /></center>
+
+Adaptado da Tabela 2 de Leal et al (2017)
+
+## Quem é convidado pra festa?
+
+<center><img src="p7.PNG" width = "900px" height="600px" /></center>
+
+Adaptado do Gráfico 3 de Marona, Araújo e Magalhães (2020, *no prelo*)
 
 
-* O segundo jogador (isto é, o Senado) tem a capacidade de vetar ou confirmar a escolha realizada pelo primeiro;                            
+## Quem é convidado pra festa?
+
+<center><img src="p9.PNG" width = "900px" height="600px" /></center>
+
+Adaptado do Gráfico 1 de Guimarães (2020).
 
 
-* Finalmente, após as primeiras jogadas (confirmando ou rejeitando a nomeação), a CC com $n\geq3$ toma suas decisões através da regra majoritária simples;
+## A convocação das APs
+
+&nbsp;
+&nbsp;
+
+Critérios vagos: “sempre que entender necessário o esclarecimento de questões ou circunstâncias de fato, com repercussão geral e de interesse público relevante”
 
 
-## Pressupostos
+&nbsp;
+&nbsp;
+
+Justificativa oficial: 1) Natureza técnica; 2) Repercussão do tema; 3) Legitimidade democrática
 
 
-As teorias de MTM partem, em alguma medida, dos pressupostos abaixo.
+&nbsp;
+&nbsp;
+
+Por que não houve uma AP para a ADI 3239 e a ADPF 153? 
+
+## A convocação das APs
+
+```{r, echo=FALSE}
+a <- rbind(c(2007,88,1),
+           c(2008,114,2),
+           c(2009,223,1),
+           c(2010,155,1),
+           c(2011,196,0),
+           c(2012,203,2),
+           c(2013,223,7),
+           c(2014,131,2))
+
+a <- data.frame(a) %>% rename("Ano"=1,"Ações de controle concentrado distribuídas"=2,
+                              "APs realizadas"=3) %>% 
+  mutate(`Taxa de Incidência`=paste(round(((`APs realizadas`/`Ações de controle concentrado distribuídas`)*100),4),"%"))
+
+
+kable(a, "html", booktabs = T) %>%
+  kable_styling(latex_options = c("scale_down"))
+```
+
+Adaptado da Tabela 1 de Marona e Rocha (2017)
+
+## A convocação das APs
+
+<center><img src="p10.PNG" width = "900px" height="600px" /></center>
+
+Adaptado do Gráfico 1 de Marona, Araújo e Magalhães (2020, *no prelo*)
+
+
+## As APs no STF são efetivas?
+
+<center><img src="p8.PNG" width = "900px" height="600px" /></center>
+
+Adaptado do Gráfico 4 de Leal et al (2017)
+
+## As APs no STF são efetivas?
+
+
+&nbsp;
+&nbsp;
+
+O impacto é, geralmente, medido a partir de citações de expositores das APs nos votos dos ministros
+
+&nbsp;
+&nbsp;
+
+
+Baixa frequência de citações e concentração delas no voto do relator, também responsável pela convocação da AP
+
+&nbsp;
+&nbsp;
+
+
+Utilização enviesada dos argumentos das APs, privilegiando aqueles que vão ao encontro da tese do ministro
+
+# Do que se sabe ao que podemos saber
+
+## Síntese dos achados
 
 <div style="float: left; width: 40%;">
 
+* A estabilização/institucionalização informal de algumas práticas
 
-* A vacância do cargo (aposentadoria ou morte) é exógena;
+* O formato adversarial das exposições e a proibição do debate durante as AP
 
-* As decisões da CC são definidas pelo juiz mediano;
+* A falta de transparência na seleção dos expositores
 
-* *One-shot-game* 
-
-* *gridlock-averse*
+* O desequilíbrio na composição dos participantes da audiência e o enviesamento na direção do posicionamento futuro do relator do processo
 
 </div>
 
 <div style="float: right; width: 50%;font-size:33px">
 
-* Todos os jogadores possuem informação completa sobre as preferências dos demais
+* A ausência de objetividade e uniformidade dos critérios para a convocação da AP
 
-* Todos os jogadores possuem preferências unidimensionais, simétricas e de pico único.
+* A baixa presença dos ministros durante a realização das AP, com exceção do relator ou do presidente responsável pela sua convocação
 
-* A CC é composta por 5 membros e com a vacância fica com 4
+* As poucas referências às exposições das AP nos votos dos ministros e a utilização dos argumentos lá apresentados apenas para reforçar a tese do julgador
 
 
 </div>
 
+## Deliberação, participação ou estratégia?
 
-## Notação
+As APs não parecem estar à altura do ideal deliberativo e participativo. Por que, então, elas são convocadas?
 
-&nbsp;
-&nbsp;
+Hipóteses levantadas por Marona, Araújo e Magalhães (2020, *no prelo*)
 
-A notação varia de trabalho para trabalho, mas, de maneira geral, segue as padronizações abaixo:
+1 - Aumentar as chances de vitória em processos controvertidos;
 
-* O ponto ideal do Presidente é $p$, o do Senado $s$ e o do nomeado $n$
+2 - Evitar represálias, quando o relator possui um posicionamento contrário ao de um ator com poder de retaliação;
 
-* Os juízes da CC possuem pontos ideais: 1) $j_{i}^0$ para a corte pré-vacância; 2) $j_{i}^1$ para a corte durante a vacância; 3) $j_{i}^2$ para a corte pós-nomeação. 
-
-* $q=j_3^0$ é o *status quo*
-
-* $i_s = 2s - q$ é o ponto de indiferença do Senado ($s$) em relação ao *status quo*, isto é, o ponto $i_s$ concende a S o mesmo grau de utilidade que $q$ </p>
-
-## Nomeações equivalentes
-
-&nbsp;
-&nbsp;
-
-<div style="float: left; width: 40%;">
-
-O novo juiz mediano sempre estará contido no intervalo dos juízes 2 e 3 da corte durante a vacância ($j_3^2 \in[j^1_2,j^1_3]$)
-
-Além disso, algumas nomeações produzem o mesmo mediano, razão pela qual são equivalentes: $\forall n<j_2^1, j_3^2=j_2^1$ e $\forall n>j_3^1, j_3^2=j_3^1$
-
-</div>
-
-<div style="float: right; width: 50%;">
-
-<center><img src="nomeacoes_equivalentes.PNG" width = "100%" height="100%" /></center>
-
-</div>
-
-## Vacâncias
-
-&nbsp;
-&nbsp;
-
-Existem dois tipos de vacâncias, as distais e as proximais
-
-* Vacância distal: ocorre quando o ponto ideal do juiz ($v$) que deixou o cargo e do Presidente estão em lados opostos em relação ao *status quo*, isto é, $v≥q$ e $p<q$.
-
-* Vacância proximal: ocorre quando o ponto ideal do juiz que deixou o cargo e do Presidente estão do mesmo lado em relação ao *status quo*, ou seja, $v>q$ e $p>q$ 
-
-# Equilíbrios
-
-## O que é um equilíbrio?
-
-&nbsp;
-&nbsp;
-
-Considerando que uma das principais contribuições desses estudos é identificar os diversos equilíbrios do jogo, vale a pena explicar brevemente o que isso significa. 
-
-O equilíbrio é uma situação em que nenhum dos jogadores consegue unilateralmente aumentar sua utilidade 
-
-```{r include=FALSE}
-library(kableExtra)
-library(tidyverse)
-```
-
-
-```{r echo=FALSE}
-
-df <-  data.frame(a = c("Ambos são condenados a 6 meses",
-                                             "'A' sai livre; 'B' é condenado a 10 anos"),
-                  b = c("'A' é condenado a 10 anos; 'B' sai livre",
-                                               "Ambos são condenados a 5 anos"))
-df <- df %>% mutate(
-  b= cell_spec(b, background = ifelse(b=="Ambos são condenados a 5 anos","#eca1a6", "#FFF8DC"))
-)
-
-rownames(df) <- c("Prisioneiro 'A' nega	", "Prisioneiro 'A' delata")
-colnames(df) <- c("Prisioneiro 'B' nega", "Prisioneiro 'B' delata")
-
-
-kable(df, escape=FALSE)
-```
-
-## Estratégias dos atores
-
-Com o objetivo de maximizar suas utilidades, o Presidente e o Senado adotarão as seguintes estratégias:
-
-* O Presidente escolherá um nomeado que se encontre o mais próximo possível das suas preferências e, ao mesmo tempo, esteja dentro do campo de aceitação por parte do Senado
-
-* O Senado, por sua vez, possui a escolha ($e$) de confirmar ($1$) ou rejeitar ($0$) a nomeação, as quais dependem da localização do antigo mediano $J_3^0$ e do novo $J_3^2$. Em outras palavras:
-
-<p style="border:3px; border-style:dashed; border-color:#FF4136; padding: 1em;font-size:30px;">
-$$ e(s,J_3^0,J_3^2) =
-  \begin{cases}
-    1  & se \quad |s-J_3^2| \leq |s-J_3^0|\\
-    0  & se \quad |s-J_3^2| > |s-J_3^0|\\
-  \end{cases} $$ </p>
-
-## Equilíbrios
-
-Os equilíbrios do jogo serão diferentes a depender do tipo de vacância (para simplificar, vamos supor que $p<j_2^1$):
-
-<div style="float: left; width: 40%;">
-
-**Vacâncias Proximais**:
-
-Quando a vacância for proximal, o Presidente poderá escolher à vontade o seu nomeado, uma vez que o novo mediano será smpre igual ao antigo. Logo, em nenhuma hipótese o Senado irá rejeitar sua escolha, de modo que $n=p$.
-
-</div>
-
-<div style="float: right; width: 50%;">
-
-**Vacâncias Distais**:
-
-Quando a vacância for distal, o ponto ideal do nomeado será uma função da localização do Presidente, do Senado, do antigo mediano e de $j_2^1$:
-
-<p style="border:3px; border-style:dashed; border-color:#3D9970; padding: 1em;font-size:25px;">
-$$ n(p,s,q,j_2^1) =
-  \begin{cases}
-    q  & se \quad s \geq q\\
-    I_s  & se \quad s\in(\frac{(j_2^1+q)}{2}, q)\\
-    p  & se \quad s \leq \frac{(j_2^1+q)}{2}\\
-  \end{cases} $$
-</p>
-
-</div>
-
-## Equilíbrios
-
-&nbsp;
-&nbsp;
-
-<center><img src="equilibrios.PNG" width = "100%" height="500px" /></center>
-
-# Modelos e medição das variáveis
-
-## Modelos
-
-As conclusões da MTM podem ser testadas de diversas formas. 
-
-Em primeiro lugar, podemos testar se, de fato, a localização dos nomeados está de acordo com os equilíbrios encontrados.
-
-Para isso, podemos utilizar o seguinte modelo:
-
-$$ n = \alpha+\beta_1*D_1*p + \beta_2*D_2*I_s + \beta_3*D_3*q+\varepsilon $$
-Onde $D_1,D_2 e D_3$ são dummies, $\alpha$ é o intercepto e $\varepsilon$ é um erro normalmente distribuído. 
-
-A hipótese é corroborada se:
-
-* $p,I_s$ e $q$ são indistinguíveis de 1 e distinguíveis de 0
-
-
-## Modelos
-
-A MTM também pode ser testada verificando-se se as mudanças do mediano da CC ao longo do tempo estão de acordo com a teoria.
-
-$$\Delta M = \alpha + \beta Distal + \gamma Proximal + \varepsilon $$
-
-Onde $\Delta M$ significa a localização do mediano no tempo $t$ menos a localização do mediano em $t-1$. Distal e proximal são variáveis dummies.
-
-Logo, espera-se que $\alpha$ seja indistinguível de 0, isto é, em anos sem nomeações, espera-se que a localização do mediano não seja alterada; 
-
-Espera-se também que $\beta >0$ e $\gamma=0$, ou seja, a localização do mediano somente se altera se a vacância for distal.
-
-
-## Medição das Variáveis
-
-&nbsp;
-&nbsp;
-
-As variáveis de interesse da MTM podem ser medidas de diversas formas:
-
-* Ponto ideal do nomeado: Segal-Cover score
-
-* Ponto ideal do *status quo* e demais juízes da CC: média simples de votação em casos sobre liberdade civil ou alguma técnica para estimação de ponto ideal (W-nominate ou MCMC)
-
-* Ponto ideal do Presidente e do Senado: *Americans for democratic action* - ADA score ou w-nominate
-
-# Referências
-
-## 
-
-&nbsp;
-&nbsp;
-
-<p style="margin-left: 2em; text-indent: -3em "> CAMERON, C.; KASTELLEC, J.. *Are Supreme Court Nominations a Move-the-Median Game?* American Political Science Review, 110(4), 778-797, 2016. </p>
-
-<p style="margin-left: 2em; text-indent: -3em "> KREHBIEL, KEITH. *Supreme Court Appointments as a Move-the-Median Game*. American Journal of Political Science, 51, 2007. </p>
-
-<p style="margin-left: 2em; text-indent: -3em "> LAX, Jeffrey; CAMERON, Charles. *Bargaining and Opinion Assignment on the U.S. Supreme Court*. New York University Public Law and Legal Theory Working Papers, 23, 2006. </p>
-
-<p style="margin-left: 2em; text-indent: -3em "> MORASKI, Byron J.; SHIPAN, Charles R.. *The Politics of Supreme Court Nominations: A Theory of Institutional Constraints and Choices*. American Journal of Political Science 43(4):1069–95, 1999. </p>
-
-<p style="margin-left: 2em; text-indent: -3em "> ROHDE, David W.; SHEPSLE, Kenneth A.. *Advising and Consenting in the 60-Vote Senate: Strategic Appointments to the Supreme Court.* Journal of Politics 69 (3): 664–77, 2007. </p>
-
-
-
- 
+3 - Ampliar o apoio difuso da corte

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Mateus Morais Araújo e Lucas Fernandes de Magalhães" />
-  <title>Movendo o Mediano</title>
+  <meta name="author" content="Marjorie Corrêa Marona e Lucas Fernandes de Magalhães" />
+  <title>Audiências Públicas</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -444,210 +444,274 @@ style.innerHTML = style_script;
 document.getElementsByTagName('head')[0].appendChild(style);
 </script>
 
+    <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+    <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
 <section>
-    <h1 class="title">Movendo o Mediano</h1>
-  <h1 class="subtitle">Política de nomeações e padrão decisório das Cortes Constitucionais</h1>
-    <h2 class="author">Mateus Morais Araújo e Lucas Fernandes de Magalhães</h2>
+    <h1 class="title">Audiências Públicas</h1>
+  <h1 class="subtitle">no STF</h1>
+    <h2 class="author">Marjorie Corrêa Marona e Lucas Fernandes de Magalhães</h2>
 </section>
 
-<section><section id="mtm---movendo-o-mediano" class="title-slide slide level1"><h1>MTM - Movendo o mediano</h1></section><section id="o-que-e-a-mtm" class="slide level2">
-<h2>O que é a MTM?</h2>
+<section><section id="introdução" class="title-slide slide level1"><h1>Introdução</h1></section><section id="estrutura-da-apresentação" class="slide level2">
+<h2>Estrutura da apresentação</h2>
 <p>   </p>
-<p>A <em>move-the-median</em> - MTM é uma teoria formal que busca explicar o funcionamento do jogo de nomeações para agências reguladoras ou para uma Corte Constitucional - CC</p>
-<p>   </p>
-<p>A ideia básica da MTM é a de que os jogadores responsáveis pela nomeação realizam suas escolhas sempre com o objetivo de aproximar o Juiz Mediano o máximo possível das suas preferências políticas.</p>
-</section><section id="atores" class="slide level2">
-<h2>Atores</h2>
-<p>   </p>
-<p>O jogo da nomeação conta com <span class="math inline">\(2 + n\)</span> atores:</p>
-<ul>
-<li><p>O primeiro deles (isto é, o Presidente) é o responsável por escolher o nomeado, também chamado de <em>agenda settler</em>;</p></li>
-<li><p>O segundo jogador (isto é, o Senado) tem a capacidade de vetar ou confirmar a escolha realizada pelo primeiro;</p></li>
-<li><p>Finalmente, após as primeiras jogadas (confirmando ou rejeitando a nomeação), a CC com <span class="math inline">\(n\geq3\)</span> toma suas decisões através da regra majoritária simples;</p></li>
-</ul>
-</section><section id="pressupostos" class="slide level2">
-<h2>Pressupostos</h2>
-<p>As teorias de MTM partem, em alguma medida, dos pressupostos abaixo.</p>
-<div style="float: left; width: 40%;">
-<ul>
-<li><p>A vacância do cargo (aposentadoria ou morte) é exógena;</p></li>
-<li><p>As decisões da CC são definidas pelo juiz mediano;</p></li>
-<li><p><em>One-shot-game</em></p></li>
-<li><p><em>gridlock-averse</em></p></li>
-</ul>
-</div>
-<div style="float: right; width: 50%;font-size:33px">
-<ul>
-<li><p>Todos os jogadores possuem informação completa sobre as preferências dos demais</p></li>
-<li><p>Todos os jogadores possuem preferências unidimensionais, simétricas e de pico único.</p></li>
-<li><p>A CC é composta por 5 membros e com a vacância fica com 4</p></li>
-</ul>
-</div>
-</section><section id="notacao" class="slide level2">
-<h2>Notação</h2>
-<p>   </p>
-<p>A notação varia de trabalho para trabalho, mas, de maneira geral, segue as padronizações abaixo:</p>
-<ul>
-<li><p>O ponto ideal do Presidente é <span class="math inline">\(p\)</span>, o do Senado <span class="math inline">\(s\)</span> e o do nomeado <span class="math inline">\(n\)</span></p></li>
-<li><p>Os juízes da CC possuem pontos ideais: 1) <span class="math inline">\(j_{i}^0\)</span> para a corte pré-vacância; 2) <span class="math inline">\(j_{i}^1\)</span> para a corte durante a vacância; 3) <span class="math inline">\(j_{i}^2\)</span> para a corte pós-nomeação.</p></li>
-<li><p><span class="math inline">\(q=j_3^0\)</span> é o <em>status quo</em></p></li>
-<li><span class="math inline">\(i_s = 2s - q\)</span> é o ponto de indiferença do Senado (<span class="math inline">\(s\)</span>) em relação ao <em>status quo</em>, isto é, o ponto <span class="math inline">\(i_s\)</span> concende a S o mesmo grau de utilidade que <span class="math inline">\(q\)</span>
-</p></li>
-</ul>
-</section><section id="nomeacoes-equivalentes" class="slide level2">
-<h2>Nomeações equivalentes</h2>
-<p>   </p>
-<div style="float: left; width: 40%;">
-<p>O novo juiz mediano sempre estará contido no intervalo dos juízes 2 e 3 da corte durante a vacância (<span class="math inline">\(j_3^2 \in[j^1_2,j^1_3]\)</span>)</p>
-<p>Além disso, algumas nomeações produzem o mesmo mediano, razão pela qual são equivalentes: <span class="math inline">\(\forall n&lt;j_2^1, j_3^2=j_2^1\)</span> e <span class="math inline">\(\forall n&gt;j_3^1, j_3^2=j_3^1\)</span></p>
-</div>
-<div style="float: right; width: 50%;">
-<center>
-<img src="nomeacoes_equivalentes.PNG" width = "100%" height="100%" />
-</center>
-</div>
-</section><section id="vacancias" class="slide level2">
-<h2>Vacâncias</h2>
-<p>   </p>
-<p>Existem dois tipos de vacâncias, as distais e as proximais</p>
-<ul>
-<li><p>Vacância distal: ocorre quando o ponto ideal do juiz (<span class="math inline">\(v\)</span>) que deixou o cargo e do Presidente estão em lados opostos em relação ao <em>status quo</em>, isto é, <span class="math inline">\(v≥q\)</span> e <span class="math inline">\(p&lt;q\)</span>.</p></li>
-<li><p>Vacância proximal: ocorre quando o ponto ideal do juiz que deixou o cargo e do Presidente estão do mesmo lado em relação ao <em>status quo</em>, ou seja, <span class="math inline">\(v&gt;q\)</span> e <span class="math inline">\(p&gt;q\)</span></p></li>
-</ul>
+<p>1- As APs e o campo de <em>Judicial Politics</em> no Brasil</p>
+<p>2- Referenciais teóricos</p>
+<p>3- O que sabemos sobre as APs no STF: regras de funcionamento, padrão de participação e impacto sobre a decisão dos ministros</p>
+<p>4 - Do que se sabe ao que se pode saber: deliberação, participação ou estratégia?</p>
+</section><section id="levantamento-bibliográfico" class="slide level2">
+<h2>Levantamento bibliográfico</h2>
+<p><img src="index_files/figure-revealjs/unnamed-chunk-2-1.png" width="1152" style="display: block; margin: auto;" /></p>
 </section></section>
-<section><section id="equilibrios" class="title-slide slide level1"><h1>Equilíbrios</h1></section><section id="o-que-e-um-equilibrio" class="slide level2">
-<h2>O que é um equilíbrio?</h2>
+<section><section id="as-aps-e-o-campo-de-judicial-politics-no-brasil" class="title-slide slide level1"><h1>As APs e o campo de <em>Judicial Politics</em> no Brasil</h1></section><section id="as-aps-e-a-agenda-de-judicial-politics" class="slide level2">
+<h2>As APs e a agenda de <em>Judicial Politics</em></h2>
 <p>   </p>
-<p>Considerando que uma das principais contribuições desses estudos é identificar os diversos equilíbrios do jogo, vale a pena explicar brevemente o que isso significa.</p>
-<p>O equilíbrio é uma situação em que nenhum dos jogadores consegue unilateralmente aumentar sua utilidade</p>
-<table>
+<p>Acesso e Padrão de Acionamento da corte</p>
+<p>   </p>
+<p>Comportamento e Processo Decisório</p>
+</section></section>
+<section><section id="referenciais-teóricos" class="title-slide slide level1"><h1>Referenciais teóricos</h1></section><section id="deliberação-e-cortes-constitucionais" class="slide level2">
+<h2>Deliberação e cortes constitucionais</h2>
+<p>   </p>
+<p>Deliberação interna</p>
+<p>   </p>
+<p>Diálogo interinstitucional</p>
+<p>   </p>
+<p>Interface socioestatal</p>
+</section><section id="comportamento-judicial" class="slide level2">
+<h2>Comportamento Judicial</h2>
+<p>   </p>
+<p>Teorias de comportamento judicial</p>
+<p>   </p>
+<p>Estratégia e poderes individuais dos ministros</p>
+</section></section>
+<section><section id="o-que-sabemos-sobre-as-aps-no-stf" class="title-slide slide level1"><h1>O que sabemos sobre as APs no STF?</h1></section><section id="a-regra-é-não-ter-regra" class="slide level2">
+<h2>A regra é não ter regra?</h2>
+<p>   </p>
+<p>Regramento mínimo nas Leis e no RISTF</p>
+<p>   </p>
+<p>Institucionalização informal de algumas práticas reiteradas</p>
+<p>   </p>
+<p>Formato “adversarial” das apresentações</p>
+<p>   </p>
+<p>Regra do “não-debate”</p>
+</section><section id="quem-é-convidado-pra-festa" class="slide level2">
+<h2>Quem é convidado pra festa?</h2>
+<p>   </p>
+<p>Participação através de 1) Convite, 2) Indicação pelas partes ou terceiros admitidos no processo ou 3) Inscrição</p>
+<p>   </p>
+<p>Falta de transparência em relação aos critérios de envio de convites e (in)deferimento das inscrições</p>
+</section><section id="quem-é-convidado-pra-festa-1" class="slide level2">
+<h2>Quem é convidado pra festa?</h2>
+<center>
+<img src="p6.png" width = "900px" height="600px" />
+</center>
+<p>Adaptado da Tabela 2 de Leal et al (2017)</p>
+</section><section id="quem-é-convidado-pra-festa-2" class="slide level2">
+<h2>Quem é convidado pra festa?</h2>
+<center>
+<img src="p7.png" width = "900px" height="600px" />
+</center>
+<p>Adaptado do Gráfico 3 de Marona, Araújo e Magalhães (2020, <em>no prelo</em>)</p>
+</section><section id="quem-é-convidado-pra-festa-3" class="slide level2">
+<h2>Quem é convidado pra festa?</h2>
+<center>
+<img src="p9.png" width = "900px" height="600px" />
+</center>
+<p>Adaptado do Gráfico 1 de Guimarães (2020).</p>
+</section><section id="a-convocação-das-aps" class="slide level2">
+<h2>A convocação das APs</h2>
+<p>   </p>
+<p>Critérios vagos: “sempre que entender necessário o esclarecimento de questões ou circunstâncias de fato, com repercussão geral e de interesse público relevante”</p>
+<p>   </p>
+<p>Justificativa oficial: 1) Natureza técnica; 2) Repercussão do tema; 3) Legitimidade democrática</p>
+<p>   </p>
+<p>Por que não houve uma AP para a ADI 3239 e a ADPF 153?</p>
+</section><section id="a-convocação-das-aps-1" class="slide level2">
+<h2>A convocação das APs</h2>
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;">
+<th style="text-align:right;">
+Ano
+</th>
+<th style="text-align:right;">
+Ações de controle concentrado distribuídas
+</th>
+<th style="text-align:right;">
+APs realizadas
 </th>
 <th style="text-align:left;">
-Prisioneiro ‘B’ nega
-</th>
-<th style="text-align:left;">
-Prisioneiro ‘B’ delata
+Taxa de Incidência
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">
-Prisioneiro ‘A’ nega
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:right;">
+1
 </td>
 <td style="text-align:left;">
-Ambos são condenados a 6 meses
-</td>
-<td style="text-align:left;">
-<span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #FFF8DC !important;">‘A’ é condenado a 10 anos; ‘B’ sai livre</span>
+1.1364 %
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
-Prisioneiro ‘A’ delata
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+2
 </td>
 <td style="text-align:left;">
-‘A’ sai livre; ‘B’ é condenado a 10 anos
+1.7544 %
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+1
 </td>
 <td style="text-align:left;">
-<span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #eca1a6 !important;">Ambos são condenados a 5 anos</span>
+0.4484 %
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:right;">
+155
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+0.6452 %
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:right;">
+196
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+0 %
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:right;">
+203
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+0.9852 %
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:right;">
+223
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:left;">
+3.139 %
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:right;">
+131
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+1.5267 %
 </td>
 </tr>
 </tbody>
 </table>
-</section><section id="estrategias-dos-atores" class="slide level2">
-<h2>Estratégias dos atores</h2>
-<p>Com o objetivo de maximizar suas utilidades, o Presidente e o Senado adotarão as seguintes estratégias:</p>
-<ul>
-<li><p>O Presidente escolherá um nomeado que se encontre o mais próximo possível das suas preferências e, ao mesmo tempo, esteja dentro do campo de aceitação por parte do Senado</p></li>
-<li><p>O Senado, por sua vez, possui a escolha (<span class="math inline">\(e\)</span>) de confirmar (<span class="math inline">\(1\)</span>) ou rejeitar (<span class="math inline">\(0\)</span>) a nomeação, as quais dependem da localização do antigo mediano <span class="math inline">\(J_3^0\)</span> e do novo <span class="math inline">\(J_3^2\)</span>. Em outras palavras:</p></li>
-</ul>
-<p style="border:3px; border-style:dashed; border-color:#FF4136; padding: 1em;font-size:30px;">
-<span class="math display">\[ e(s,J_3^0,J_3^2) =
-  \begin{cases}
-    1  &amp; se \quad |s-J_3^2| \leq |s-J_3^0|\\
-    0  &amp; se \quad |s-J_3^2| &gt; |s-J_3^0|\\
-  \end{cases} \]</span>
-</p>
-</section><section id="equilibrios-1" class="slide level2">
-<h2>Equilíbrios</h2>
-<p>Os equilíbrios do jogo serão diferentes a depender do tipo de vacância (para simplificar, vamos supor que <span class="math inline">\(p&lt;j_2^1\)</span>):</p>
-<div style="float: left; width: 40%;">
-<p><strong>Vacâncias Proximais</strong>:</p>
-<p>Quando a vacância for proximal, o Presidente poderá escolher à vontade o seu nomeado, uma vez que o novo mediano será smpre igual ao antigo. Logo, em nenhuma hipótese o Senado irá rejeitar sua escolha, de modo que <span class="math inline">\(n=p\)</span>.</p>
-</div>
-<div style="float: right; width: 50%;">
-<p><strong>Vacâncias Distais</strong>:</p>
-<p>Quando a vacância for distal, o ponto ideal do nomeado será uma função da localização do Presidente, do Senado, do antigo mediano e de <span class="math inline">\(j_2^1\)</span>:</p>
-<p style="border:3px; border-style:dashed; border-color:#3D9970; padding: 1em;font-size:25px;">
-<span class="math display">\[ n(p,s,q,j_2^1) =
-  \begin{cases}
-    q  &amp; se \quad s \geq q\\
-    I_s  &amp; se \quad s\in(\frac{(j_2^1+q)}{2}, q)\\
-    p  &amp; se \quad s \leq \frac{(j_2^1+q)}{2}\\
-  \end{cases} \]</span>
-</p>
-</div>
-</section><section id="equilibrios-2" class="slide level2">
-<h2>Equilíbrios</h2>
-<p>   </p>
+<p>Adaptado da Tabela 1 de Marona e Rocha (2017)</p>
+</section><section id="a-convocação-das-aps-2" class="slide level2">
+<h2>A convocação das APs</h2>
 <center>
-<img src="equilibrios.PNG" width = "100%" height="500px" />
+<img src="p10.png" width = "900px" height="600px" />
 </center>
-</section></section>
-<section><section id="modelos-e-medicao-das-variaveis" class="title-slide slide level1"><h1>Modelos e medição das variáveis</h1></section><section id="modelos" class="slide level2">
-<h2>Modelos</h2>
-<p>As conclusões da MTM podem ser testadas de diversas formas.</p>
-<p>Em primeiro lugar, podemos testar se, de fato, a localização dos nomeados está de acordo com os equilíbrios encontrados.</p>
-<p>Para isso, podemos utilizar o seguinte modelo:</p>
-<p><span class="math display">\[ n = \alpha+\beta_1*D_1*p + \beta_2*D_2*I_s + \beta_3*D_3*q+\varepsilon \]</span> Onde <span class="math inline">\(D_1,D_2 e D_3\)</span> são dummies, <span class="math inline">\(\alpha\)</span> é o intercepto e <span class="math inline">\(\varepsilon\)</span> é um erro normalmente distribuído.</p>
-<p>A hipótese é corroborada se:</p>
-<ul>
-<li><span class="math inline">\(p,I_s\)</span> e <span class="math inline">\(q\)</span> são indistinguíveis de 1 e distinguíveis de 0</li>
-</ul>
-</section><section id="modelos-1" class="slide level2">
-<h2>Modelos</h2>
-<p>A MTM também pode ser testada verificando-se se as mudanças do mediano da CC ao longo do tempo estão de acordo com a teoria.</p>
-<p><span class="math display">\[\Delta M = \alpha + \beta Distal + \gamma Proximal + \varepsilon \]</span></p>
-<p>Onde <span class="math inline">\(\Delta M\)</span> significa a localização do mediano no tempo <span class="math inline">\(t\)</span> menos a localização do mediano em <span class="math inline">\(t-1\)</span>. Distal e proximal são variáveis dummies.</p>
-<p>Logo, espera-se que <span class="math inline">\(\alpha\)</span> seja indistinguível de 0, isto é, em anos sem nomeações, espera-se que a localização do mediano não seja alterada;</p>
-<p>Espera-se também que <span class="math inline">\(\beta &gt;0\)</span> e <span class="math inline">\(\gamma=0\)</span>, ou seja, a localização do mediano somente se altera se a vacância for distal.</p>
-</section><section id="medicao-das-variaveis" class="slide level2">
-<h2>Medição das Variáveis</h2>
+<p>Adaptado do Gráfico 1 de Marona, Araújo e Magalhães (2020, <em>no prelo</em>)</p>
+</section><section id="as-aps-no-stf-são-efetivas" class="slide level2">
+<h2>As APs no STF são efetivas?</h2>
+<center>
+<img src="p8.png" width = "900px" height="600px" />
+</center>
+<p>Adaptado do Gráfico 4 de Leal et al (2017)</p>
+</section><section id="as-aps-no-stf-são-efetivas-1" class="slide level2">
+<h2>As APs no STF são efetivas?</h2>
 <p>   </p>
-<p>As variáveis de interesse da MTM podem ser medidas de diversas formas:</p>
-<ul>
-<li><p>Ponto ideal do nomeado: Segal-Cover score</p></li>
-<li><p>Ponto ideal do <em>status quo</em> e demais juízes da CC: média simples de votação em casos sobre liberdade civil ou alguma técnica para estimação de ponto ideal (W-nominate ou MCMC)</p></li>
-<li><p>Ponto ideal do Presidente e do Senado: <em>Americans for democratic action</em> - ADA score ou w-nominate</p></li>
-</ul>
-</section></section>
-<section><section id="referencias" class="title-slide slide level1"><h1>Referências</h1></section><section id="section" class="slide level2">
-<h2></h2>
+<p>O impacto é, geralmente, medido a partir de citações de expositores das APs nos votos dos ministros</p>
 <p>   </p>
-<p style="margin-left: 2em; text-indent: -3em ">
-CAMERON, C.; KASTELLEC, J.. <em>Are Supreme Court Nominations a Move-the-Median Game?</em> American Political Science Review, 110(4), 778-797, 2016.
-</p>
-<p style="margin-left: 2em; text-indent: -3em ">
-KREHBIEL, KEITH. <em>Supreme Court Appointments as a Move-the-Median Game</em>. American Journal of Political Science, 51, 2007.
-</p>
-<p style="margin-left: 2em; text-indent: -3em ">
-LAX, Jeffrey; CAMERON, Charles. <em>Bargaining and Opinion Assignment on the U.S. Supreme Court</em>. New York University Public Law and Legal Theory Working Papers, 23, 2006.
-</p>
-<p style="margin-left: 2em; text-indent: -3em ">
-MORASKI, Byron J.; SHIPAN, Charles R.. <em>The Politics of Supreme Court Nominations: A Theory of Institutional Constraints and Choices</em>. American Journal of Political Science 43(4):1069–95, 1999.
-</p>
-<p style="margin-left: 2em; text-indent: -3em ">
-ROHDE, David W.; SHEPSLE, Kenneth A.. <em>Advising and Consenting in the 60-Vote Senate: Strategic Appointments to the Supreme Court.</em> Journal of Politics 69 (3): 664–77, 2007.
-</p>
+<p>Baixa frequência de citações e concentração delas no voto do relator, também responsável pela convocação da AP</p>
+<p>   </p>
+<p>Utilização enviesada dos argumentos das APs, privilegiando aqueles que vão ao encontro da tese do ministro</p>
+</section></section>
+<section><section id="do-que-se-sabe-ao-que-podemos-saber" class="title-slide slide level1"><h1>Do que se sabe ao que podemos saber</h1></section><section id="síntese-dos-achados" class="slide level2">
+<h2>Síntese dos achados</h2>
+<div style="float: left; width: 40%;">
+<ul>
+<li><p>A estabilização/institucionalização informal de algumas práticas</p></li>
+<li><p>O formato adversarial das exposições e a proibição do debate durante as AP</p></li>
+<li><p>A falta de transparência na seleção dos expositores</p></li>
+<li><p>O desequilíbrio na composição dos participantes da audiência e o enviesamento na direção do posicionamento futuro do relator do processo</p></li>
+</ul>
+</div>
+<div style="float: right; width: 50%;font-size:33px">
+<ul>
+<li><p>A ausência de objetividade e uniformidade dos critérios para a convocação da AP</p></li>
+<li><p>A baixa presença dos ministros durante a realização das AP, com exceção do relator ou do presidente responsável pela sua convocação</p></li>
+<li><p>As poucas referências às exposições das AP nos votos dos ministros e a utilização dos argumentos lá apresentados apenas para reforçar a tese do julgador</p></li>
+</ul>
+</div>
+</section><section id="deliberação-participação-ou-estratégia" class="slide level2">
+<h2>Deliberação, participação ou estratégia?</h2>
+<p>As APs não parecem estar à altura do ideal deliberativo e participativo. Por que, então, elas são convocadas?</p>
+<p>Hipóteses levantadas por Marona, Araújo e Magalhães (2020, <em>no prelo</em>)</p>
+<p>1 - Aumentar as chances de vitória em processos controvertidos;</p>
+<p>2 - Evitar represálias, quando o relator possui um posicionamento contrário ao de um ator com poder de retaliação;</p>
+<p>3 - Ampliar o apoio difuso da corte</p>
 </section></section>
     </div>
   </div>
