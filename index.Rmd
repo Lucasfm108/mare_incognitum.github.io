@@ -23,13 +23,11 @@ output:
 &nbsp;
 &nbsp;
 
-1- As APs e o campo de *Judicial Politics* no Brasil
+1 - Referenciais teóricos
 
-2- Referenciais teóricos
+2 - O que sabemos sobre as APs no STF: regras de funcionamento, padrão de participação e impacto sobre a decisão dos ministros
 
-3- O que sabemos sobre as APs no STF: regras de funcionamento, padrão de participação e impacto sobre a decisão dos ministros
-
-4 - Do que se sabe ao que se pode saber: deliberação, participação ou estratégia?
+3 - Do que se sabe ao que se pode saber: deliberação, participação ou estratégia?
 
 ## Levantamento bibliográfico
 
@@ -104,51 +102,20 @@ grid.arrange(p1,p2)
 ```
 
 
-# As APs e o campo de *Judicial Politics* no Brasil
-
-## As APs e a agenda de *Judicial Politics*
-
-&nbsp;
-&nbsp;
-
-Acesso e Padrão de Acionamento da corte
-
-&nbsp;
-&nbsp;
-
-Comportamento e Processo Decisório
-
-
 # Referenciais teóricos
 
-## Deliberação e cortes constitucionais
+## Deliberação e Comportamento judicial
 
 &nbsp;
 &nbsp;
 
-Deliberação interna
+Deliberação e legitimidade do *judicial review*: podem as APs corrigir o déficit democrático do STF? 
 
 &nbsp;
 &nbsp;
 
-Diálogo interinstitucional
+Comportamento judicial: por que os ministros convocam as APs?
 
-&nbsp;
-&nbsp;
-
-Interface socioestatal
-
-## Comportamento Judicial
-
-&nbsp;
-&nbsp;
-
-Teorias de comportamento judicial
-
-&nbsp;
-&nbsp;
-
-Estratégia e poderes individuais dos ministros
 
 # O que sabemos sobre as APs no STF?
 
