@@ -109,12 +109,12 @@ grid.arrange(p1,p2)
 &nbsp;
 &nbsp;
 
-Deliberação e legitimidade do *judicial review*: podem as APs corrigir o déficit democrático do STF? 
+Deliberação e legitimidade do *judicial review*: podem as APs corrigir o déficit democrático do STF? (VESTENA, 2010; MARONA; ROCHA, 2014, GODOY, 2015; CARAZZA, 2016; SOMBRA, 2017; MARONA; ROCHA, 2017)
 
 &nbsp;
 &nbsp;
 
-Comportamento judicial: por que os ministros convocam as APs?
+Comportamento judicial: por que os ministros convocam as APs? (GUIMARÃES, 2020; MARONA; ARAÚJO; MAGALHÃES, *no prelo*)
 
 
 # O que sabemos sobre as APs no STF?
@@ -190,7 +190,7 @@ Justificativa oficial: 1) Natureza técnica; 2) Repercussão do tema; 3) Legitim
 &nbsp;
 &nbsp;
 
-Por que não houve uma AP para a ADI 3239 e a ADPF 153? 
+Por que não houve uma AP para a ADI 3239 e a ADPF 153 (VESTENA, 2010)? 
 
 ## A convocação das APs
 
@@ -247,6 +247,20 @@ Baixa frequência de citações e concentração delas no voto do relator, tamb�
 
 
 Utilização enviesada dos argumentos das APs, privilegiando aqueles que vão ao encontro da tese do ministro
+
+## As APs como conectores de um sistema deliberativo
+
+&nbsp;
+&nbsp;
+
+As audiências públicas e a mídia (ANDRADE; MARONA; FERES, 2019)
+
+
+&nbsp;
+&nbsp;
+
+As APs no STF e no Legislativo (RIBEIRO; SILVA; MARONA; 2019)
+
 
 # Do que se sabe ao que podemos saber
 
